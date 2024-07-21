@@ -1,6 +1,7 @@
 import { GetStaticProps } from 'next';
 import { gql } from '@apollo/client';
 import client from '@/lib/apolloClient';
+import styled from 'styled-components';
 
 // type Posts = {
 //     nodes:  {
@@ -32,15 +33,25 @@ export const getStaticProps: GetStaticProps = async () => {
   };
 };
 
+const ContainerDiv = styled.div`
+  background: #333;
+  border-radius: 8px;
+  padding: 40px;
+  color: white;
+  margin: auto;
+  width: max-content;
+  text-align: center;
+`;
+
 export default function BlogsPage({ posts }: any) {
   return (
-    <div>
+    <ContainerDiv>
       <h1>Blog Posts</h1>
       <ul>
         {posts.map((post: any) => (
           <li key={post.id}>{post.title}</li>
         ))}
       </ul>
-    </div>
+    </ContainerDiv>
   );
 }
