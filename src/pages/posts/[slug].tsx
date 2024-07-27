@@ -61,11 +61,11 @@ export const getStaticProps: GetStaticProps = async (context) => {
 
   return {
     props: {
-      image: blog.data.post.featuredImage.node.sourceUrl,
-      title: blog?.data?.post?.title || null,
-      slug: blog?.data?.post?.slug || null,
+      image: blog.data?.post?.featuredImage?.node?.sourceUrl,
+      title: blog?.data?.post?.title,
+      slug: blog?.data?.post?.slug,
       date,
-      content: blog?.data?.post?.content || null,
+      content: blog?.data?.post?.content,
     },
   };
 };
