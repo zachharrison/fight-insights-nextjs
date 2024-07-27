@@ -5,6 +5,7 @@ import moment from 'moment';
 import { BlogPost, Blogs } from '@/types/Blog';
 import Link from 'next/link';
 import Image from 'next/image';
+
 export const getStaticProps: GetStaticProps = async () => {
   const { data } = await client.query({
     query: gql`

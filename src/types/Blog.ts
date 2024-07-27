@@ -4,6 +4,7 @@ export type BlogPost = {
   title: string;
   slug: string;
   date: string;
+  content?: any;
 };
 
 export type Blogs = {
