@@ -66,9 +66,7 @@ html[data-theme='dark'] {
 body {
   font-family: 'Roboto', sans-serif;
   background: var(--background-color);
-  display: flex;
-  flex-direction: column;
-  gap: var(--page-gap);
+  color: var(--text-color);
 }
 
 .flex-start-div {

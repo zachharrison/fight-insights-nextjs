@@ -1,4 +1,4 @@
-import { Navbar } from '@/components/Navbar/Navbar';
+import { Layout } from '@/components/Layout/Layout';
 import '@/styles/globals.css';
 import type { AppProps } from 'next/app';
 import Head from 'next/head';
@@ -16,8 +16,9 @@ export default function App({ Component, pageProps }: AppProps) {
         />
         <meta name='description' content='The home of all things fighting' />
       </Head>
-      <Navbar />
-      <Component {...pageProps} />
+      <Layout>
+        <Component {...pageProps} />
+      </Layout>
     </>
   );
 }

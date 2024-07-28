@@ -1,0 +1,15 @@
+.pageContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--page-gap);
+  height: 100%;
+  margin-top: calc(40px + var(--padding-large));
+  padding: var(--padding-large);
+}
+
+@media (max-width: 499px) {
+  .pageContainer {
+    margin-top: calc(40px + var(--padding-medium));
+  }
+}

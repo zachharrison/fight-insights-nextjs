@@ -10,11 +10,11 @@ export const Navbar = () => {
             <img src='/logo.png' alt='Logo' className={styles.logo} />
           </p>
         </Link>
-        <Link href='/reviews' passHref>
-          <p className={styles.navLink}>Reviews</p>
+        <Link href='/reviews' className={styles.navLink} passHref>
+          <p>Reviews</p>
         </Link>
-        <Link href='/posts' passHref>
-          <p className={styles.navLink}>Blog</p>
+        <Link href='/posts' className={styles.navLink} passHref>
+          <p>Blog</p>
         </Link>
       </div>
       <div className={styles.iconContainerDiv}>
