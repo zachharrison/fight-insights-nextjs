@@ -3,10 +3,8 @@ export type Review = {
   image: string;
   title: string;
   slug: string;
-  date: string;
+  date?: string;
   content?: any;
 };
 
-export type Reviews = {
-  posts: Review[];
-};
+export type Reviews = Review[];

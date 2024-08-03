@@ -7,6 +7,4 @@ export type BlogPost = {
   content?: any;
 };
 
-export type Blogs = {
-  posts: BlogPost[];
-};
+export type Blogs = BlogPost[];

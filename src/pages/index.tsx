@@ -8,6 +8,8 @@ import { gql } from '@apollo/client';
 import moment from 'moment';
 import { GetStaticProps } from 'next';
 import { Reviews } from '@/types/Review';
+import BlogPostPreview from '@/components/BlogPostPreview/BlogPostPreview';
+import { ReviewPreview } from '@/components/ReviewPreview/ReviewPreview';
 
 const roboto = Roboto_Mono({ subsets: ['latin'] });
 
@@ -38,7 +40,7 @@ export const getStaticProps: GetStaticProps = async () => {
 
   const REVIEWSQUERY = gql`
     query Reviews {
-      reviews(first: 3) {
+      reviews(first: 4) {
         edges {
           node {
             id
@@ -74,15 +76,17 @@ export const getStaticProps: GetStaticProps = async () => {
       title: blog.title,
       slug: blog.slug,
       date: date.format('MMMM Do YYYY'),
+      content: blog.content,
     };
   });
 
   const reviews = reviewsResponse?.data?.reviews?.edges.map((review: any) => {
+    const date = moment(review.node.date);
     return {
       imageUrl: review.node.featuredImage.node.sourceUrl,
       title: review.node.title,
       slug: review.node.slug,
-      date: review.node.date,
+      date: date.format('MMMM Do YYYY'),
     };
   });
 
@@ -96,42 +100,41 @@ export const getStaticProps: GetStaticProps = async () => {
 };
 
 export default function Home({ blogPosts, reviews }: HomePageProps) {
-  console.log({ blogPosts, reviews });
+  const mostRecentBlogPost = blogPosts[0];
+  const blogs = blogPosts.slice(1);
   return (
     <main className={roboto.className}>
       <div className={styles.pageContainer}>
-        HOME PAGE
-        {/* <Post {...mostRecentBlogPost} fullWidth={true} />
-      <FlexColumnDiv gap="20px">
-        <TitleH1>Latest Articles</TitleH1>
-        <GridContainerDiv>
-          <Post
-            {...post}
-            image="https://imgresizer.eurosport.com/unsafe/1200x0/filters:format(jpeg)/origin-imgresizer.eurosport.com/2023/09/07/3780400-76897928-2560-1440.jpg"
-          />
-          <Post
-            {...reviewTwo}
-            image="https://cdn.vox-cdn.com/thumbor/Y5Dr0LWVNOjb1_nkBDCp3n1WOO8=/0x0:1080x1350/269x239/filters:focal(489x271:661x443):format(webp)/cdn.vox-cdn.com/uploads/chorus_image/image/72738410/386508272_18387548842006604_7783350461656217775_n.0.jpg"
-          />
-          <Post
-            {...post}
-            image="https://cdn.vox-cdn.com/thumbor/JshVrHBsDZenDUTmW6uN1lpZAy4=/1400x1400/filters:format(jpeg)/cdn.vox-cdn.com/uploads/chorus_asset/file/24129274/1435299462.jpg"
-          />
-        </GridContainerDiv>
-      </FlexColumnDiv>
+        <BlogPostPreview
+          key={mostRecentBlogPost.id + '-' + mostRecentBlogPost.title}
+          title={mostRecentBlogPost.title}
+          slug={mostRecentBlogPost.slug}
+          date={mostRecentBlogPost.date}
+          content={mostRecentBlogPost.content}
+          imageUrl={mostRecentBlogPost.imageUrl}
+          fullWidth={true}
+        />
+        <div className='flex-column-container'>
+          <h1>Latest Articles</h1>
+          <div className={styles.blogsContainer}>
+            {blogs.map((blog: any) => (
+              <BlogPostPreview
+                key={blog.id + '-' + blog.title}
+                {...blog}
+                fullWidth={false}
+              />
+            ))}
+          </div>
+        </div>
 
-      <FlexColumnDiv
-        gap="20px"
-        style={{ margin: "auto", width: "fit-content" }}
-      >
-        <TitleH1>Reviews</TitleH1>
-        <ReviewContainerDiv>
-          {reviews.map((review: any) => {
-            return <Review {...review} />;
-          })}
-          <Review {...reviewData} />
-        </ReviewContainerDiv>
-      </FlexColumnDiv> */}
+        <div className='flex-column-container'>
+          <h1>Reviews</h1>
+          <div className={styles.reviewContainer}>
+            {reviews.map((review: any) => (
+              <ReviewPreview {...review} />
+            ))}
+          </div>
+        </div>
       </div>
     </main>
   );

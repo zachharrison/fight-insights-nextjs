@@ -41,13 +41,13 @@ export const getStaticProps: GetStaticProps = async () => {
 
   return {
     props: {
-      posts: blogPosts,
+      blogPosts,
     },
     revalidate: 1,
   };
 };
 
-export default function BlogsPage({ posts }: Blogs) {
+export default function BlogsPage(posts: Blogs) {
   return (
     <div>
       <h1>Blog Posts</h1>

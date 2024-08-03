@@ -61,7 +61,7 @@ export const getStaticProps: GetStaticProps = async (context) => {
 
   return {
     props: {
-      image: blog.data?.post?.featuredImage?.node?.sourceUrl,
+      imageUrl: blog.data?.post?.featuredImage?.node?.sourceUrl,
       title: blog?.data?.post?.title,
       slug: blog?.data?.post?.slug,
       date,
