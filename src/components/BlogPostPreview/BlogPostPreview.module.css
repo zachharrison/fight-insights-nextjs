@@ -26,4 +26,9 @@
   .image {
     max-height: 200px;
   }
+
+  .cardContainerDiv h3 {
+    font-size: var(--font-size-medium);
+    line-height: 18px;
+  }
 }

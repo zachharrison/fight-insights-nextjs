@@ -19,7 +19,10 @@ export const Navbar = () => {
       </div>
       <div className={styles.iconContainerDiv}>
         {/* <ThemeToggle /> */}
-        THEME SWITCHER
+
+        <div style={{ fontSize: 'var(--font-size-x-small)' }}>
+          THEME SWITCHER{' '}
+        </div>
       </div>
     </div>
   );

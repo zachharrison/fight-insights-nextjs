@@ -32,8 +32,11 @@
 
 @media (max-width: 499px) {
   .containerDiv {
-    padding: var(--padding-medium) var(--padding-small);
+    padding: var(--padding-large) var(--padding-small);
     gap: 10px;
+  }
+  .navLink p {
+    font-size: var(--font-size-medium);
   }
 }
 

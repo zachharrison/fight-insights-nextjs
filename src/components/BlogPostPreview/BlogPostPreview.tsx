@@ -48,9 +48,9 @@ export default function Post(post: BlogPostPreviewProps) {
       <Link href={`/posts/${post.slug}`}>
         <h3>{post.title}</h3>
       </Link>
-      <p className={styles.descriptionP} style={{ maxWidth: '75%' }}>
+      {/* <p className={styles.descriptionP} style={{ maxWidth: '75%' }}>
         {truncate(post.content)}
-      </p>
+      </p> */}
     </div>
   );
 }

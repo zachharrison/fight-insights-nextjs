@@ -6,6 +6,10 @@ import { BlogPost, Blogs } from '@/types/Blog';
 import Link from 'next/link';
 import Image from 'next/image';
 
+type BlogsPageProps = {
+  blogPosts: Blogs;
+};
+
 export const getStaticProps: GetStaticProps = async () => {
   const { data } = await client.query({
     query: gql`
@@ -47,12 +51,12 @@ export const getStaticProps: GetStaticProps = async () => {
   };
 };
 
-export default function BlogsPage(posts: Blogs) {
+export default function BlogsPage({ blogPosts }: BlogsPageProps) {
   return (
     <div>
       <h1>Blog Posts</h1>
       <div className='container'>
-        {posts.map((post: BlogPost, idx: number) => (
+        {blogPosts.map((post: BlogPost, idx: number) => (
           <div className='centered' key={`${post.id}-${idx}`}>
             <Image
               src={post.imageUrl}
