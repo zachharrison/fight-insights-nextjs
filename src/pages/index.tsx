@@ -117,7 +117,7 @@ export default function Home({ blogPosts, reviews }: HomePageProps) {
         <div className='flex-column-container'>
           <h1>Latest Articles</h1>
           <div className={styles.blogsContainer}>
-            {blogs.map((blog: any) => (
+            {blogs.map((blog: any, idx: number) => (
               <BlogPostPreview
                 key={blog.id + '-' + blog.title}
                 {...blog}
@@ -131,7 +131,7 @@ export default function Home({ blogPosts, reviews }: HomePageProps) {
           <h1>Reviews</h1>
           <div className={styles.reviewContainer}>
             {reviews.map((review: any) => (
-              <ReviewPreview {...review} />
+              <ReviewPreview key={review.id + '-' + review.title} {...review} />
             ))}
           </div>
         </div>
