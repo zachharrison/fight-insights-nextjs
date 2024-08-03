@@ -2,12 +2,103 @@ import Head from 'next/head';
 import Image from 'next/image';
 import { Roboto_Mono } from 'next/font/google';
 import styles from '@/styles/Home.module.css';
+import client from '@/lib/apolloClient';
+import { BlogPost, Blogs } from '@/types/Blog';
+import { gql } from '@apollo/client';
+import moment from 'moment';
+import { GetStaticProps } from 'next';
+import { Reviews } from '@/types/Review';
 
 const roboto = Roboto_Mono({ subsets: ['latin'] });
 
-export default function Home() {
+type HomePageProps = {
+  blogPosts: Blogs;
+  reviews: Reviews;
+};
+
+export const getStaticProps: GetStaticProps = async () => {
+  const BLOGSQUERY = gql`
+    query GetPosts {
+      posts(first: 4, where: { categoryName: "blog" }) {
+        nodes {
+          title
+          content
+          date
+          slug
+          featuredImage {
+            node {
+              id
+              sourceUrl
+            }
+          }
+        }
+      }
+    }
+  `;
+
+  const REVIEWSQUERY = gql`
+    query Reviews {
+      reviews(first: 3) {
+        edges {
+          node {
+            id
+            title
+            score
+            slug
+            date
+            featuredImage {
+              node {
+                id
+                sourceUrl
+              }
+            }
+          }
+        }
+      }
+    }
+  `;
+
+  const blogsResponse = await client.query({
+    query: BLOGSQUERY,
+  });
+
+  const reviewsResponse = await client.query({
+    query: REVIEWSQUERY,
+  });
+
+  const blogPosts: Blogs = blogsResponse.data?.posts?.nodes.map((blog: any) => {
+    const date = moment(blog.date);
+
+    return {
+      imageUrl: blog.featuredImage.node.sourceUrl,
+      title: blog.title,
+      slug: blog.slug,
+      date: date.format('MMMM Do YYYY'),
+    };
+  });
+
+  const reviews = reviewsResponse?.data?.reviews?.edges.map((review: any) => {
+    return {
+      imageUrl: review.node.featuredImage.node.sourceUrl,
+      title: review.node.title,
+      slug: review.node.slug,
+      date: review.node.date,
+    };
+  });
+
+  return {
+    props: {
+      blogPosts,
+      reviews,
+    },
+    revalidate: 1,
+  };
+};
+
+export default function Home({ blogPosts, reviews }: HomePageProps) {
+  console.log({ blogPosts, reviews });
   return (
-    <main className={`${styles.main} ${roboto.className}`}>
+    <main className={roboto.className}>
       <div className={styles.pageContainer}>
         HOME PAGE
         {/* <Post {...mostRecentBlogPost} fullWidth={true} />

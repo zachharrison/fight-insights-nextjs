@@ -12,8 +12,8 @@
 
 @media (max-width: 499px) {
   .pageContainer {
-    padding: 0px 20px;
-    gap: 50px;
+    padding: 0px var(--padding-medium);
+    gap: var(--xx-large-gap);
   }
 }
 
@@ -21,7 +21,7 @@
   display: flex;
   align-items: flex-start;
   justify-content: center;
-  gap: 30px;
+  gap: var(--large-gap);
 }
 
 @media (max-width: 700px) {

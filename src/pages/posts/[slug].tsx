@@ -86,7 +86,7 @@ export default function BlogsPage(blog: BlogPost) {
   return (
     <div className='article-container'>
       <h1 className='article-title'>{blog.title}</h1>
-      <Image src={blog.image} alt={blog.title} width={100} height={100} />
+      <Image src={blog.imageUrl} alt={blog.title} width={100} height={100} />
       {/* <img src={blog.image} alt={blog.title} width={100} height={100} /> */}
 
       <div

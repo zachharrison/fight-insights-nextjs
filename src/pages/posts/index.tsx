@@ -32,7 +32,7 @@ export const getStaticProps: GetStaticProps = async () => {
     const date = moment(blog.date);
 
     return {
-      image: blog.featuredImage.node.sourceUrl,
+      imageUrl: blog.featuredImage.node.sourceUrl,
       title: blog.title,
       slug: blog.slug,
       date: date.format('MMMM Do YYYY'),
@@ -54,7 +54,12 @@ export default function BlogsPage({ posts }: Blogs) {
       <div className='container'>
         {posts.map((post: BlogPost, idx: number) => (
           <div className='centered' key={`${post.id}-${idx}`}>
-            <Image src={post.image} alt={post.slug} width={100} height={100} />
+            <Image
+              src={post.imageUrl}
+              alt={post.slug}
+              width={100}
+              height={100}
+            />
             <div className='flex-column'>
               <p>{post.date}</p>
               <Link href={`/posts/${post.slug}`}>

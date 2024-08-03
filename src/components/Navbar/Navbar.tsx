@@ -4,9 +4,9 @@ import Link from 'next/link';
 export const Navbar = () => {
   return (
     <div className={styles.containerDiv}>
-      <div className='flex-start-div'>
+      <div className='flex-start-container'>
         <Link href='/' passHref>
-          <p style={{ cursor: 'pointer', textDecoration: 'none' }}>
+          <p style={{ cursor: 'pointer' }}>
             <img src='/logo.png' alt='Logo' className={styles.logo} />
           </p>
         </Link>
