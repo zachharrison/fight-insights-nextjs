@@ -107,7 +107,7 @@ html[data-theme='dark'] {
 
 .space-between-container {
   display: flex;
-  align-items: flex-start;
+  align-items: center;
   justify-content: space-between;
   gap: var(--large-gap);
 }

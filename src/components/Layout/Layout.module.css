@@ -11,5 +11,6 @@
 @media (max-width: 499px) {
   .pageContainer {
     margin-top: calc(40px + var(--padding-medium));
+    padding: var(--padding-large) var(--padding-small);
   }
 }
