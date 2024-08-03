@@ -5,7 +5,7 @@ import moment from 'moment';
 import { BlogPost, Blogs } from '@/types/Blog';
 import Link from 'next/link';
 import Image from 'next/image';
-
+import styles from './BlogsPage.module.css';
 type BlogsPageProps = {
   blogPosts: Blogs;
 };
@@ -53,26 +53,18 @@ export const getStaticProps: GetStaticProps = async () => {
 
 export default function BlogsPage({ blogPosts }: BlogsPageProps) {
   return (
-    <div>
-      <h1>Blog Posts</h1>
-      <div className='container'>
-        {blogPosts.map((post: BlogPost, idx: number) => (
-          <div className='centered' key={`${post.id}-${idx}`}>
-            <Image
-              src={post.imageUrl}
-              alt={post.slug}
-              width={100}
-              height={100}
-            />
-            <div className='flex-column'>
-              <p>{post.date}</p>
-              <Link href={`/posts/${post.slug}`}>
-                <h1>{post.title}</h1>
-              </Link>
-            </div>
+    <div className={styles.containerDiv}>
+      {blogPosts.map((post: BlogPost, idx: number) => (
+        <div className={styles.blogContainer} key={`${post.id}-${idx}`}>
+          <img className={styles.blogImg} src={post.imageUrl} alt={post.slug} />
+          <div className='flex-column-container'>
+            <p className='date'>{post.date}</p>
+            <Link href={`/posts/${post.slug}`}>
+              <h1 className={styles.blogTitle}>{post.title}</h1>
+            </Link>
           </div>
-        ))}
-      </div>
+        </div>
+      ))}
     </div>
   );
 }

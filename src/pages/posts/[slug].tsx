@@ -5,7 +5,7 @@ import Image from 'next/image';
 import moment from 'moment';
 import client from '@/lib/apolloClient';
 import { useEffect } from 'react';
-
+import styles from './Blog.module.css';
 export const getStaticPaths: GetStaticPaths = async () => {
   const { data } = await client.query({
     query: gql`
@@ -84,11 +84,13 @@ export default function BlogsPage(blog: BlogPost) {
   }, []);
 
   return (
-    <div className='article-container'>
-      <h1 className='article-title'>{blog.title}</h1>
-      <Image src={blog.imageUrl} alt={blog.title} width={100} height={100} />
-      {/* <img src={blog.image} alt={blog.title} width={100} height={100} /> */}
-
+    <div className={styles.articleContainer}>
+      <img
+        src={blog.imageUrl}
+        className='full-width-image height-100'
+        alt={blog.title}
+      />
+      <h1 className={styles.articleTitle}>{blog.title}</h1>
       <div
         className='article-text'
         style={{ margin: 'auto' }}

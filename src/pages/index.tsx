@@ -115,7 +115,7 @@ export default function Home({ blogPosts, reviews }: HomePageProps) {
           fullWidth={true}
         />
         <div className='flex-column-container'>
-          <h1>Latest Articles</h1>
+          <h1 className='title-h1'>Latest Articles</h1>
           <div className={styles.blogsContainer}>
             {blogs.map((blog: any, idx: number) => (
               <BlogPostPreview
@@ -127,8 +127,8 @@ export default function Home({ blogPosts, reviews }: HomePageProps) {
           </div>
         </div>
 
-        <div className='flex-column-container'>
-          <h1>Reviews</h1>
+        <div className='flex-column-container width-100'>
+          <h1 className='title-h1'>Reviews</h1>
           <div className={styles.reviewContainer}>
             {reviews.map((review: any) => (
               <ReviewPreview key={review.id + '-' + review.title} {...review} />

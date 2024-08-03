@@ -11,10 +11,10 @@ export const Navbar = () => {
           </p>
         </Link>
         <Link href='/reviews' className={styles.navLink} passHref>
-          <p>Reviews</p>
+          <p className='text-p'>Reviews</p>
         </Link>
         <Link href='/posts' className={styles.navLink} passHref>
-          <p>Blog</p>
+          <p className='text-p'>Blog</p>
         </Link>
       </div>
       <div className={styles.iconContainerDiv}>
