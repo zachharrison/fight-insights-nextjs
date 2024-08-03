@@ -1,11 +1,11 @@
 .articleContainer {
-  padding: var(--xx-large-gap) 0px;
+  /* padding: var(--xx-large-gap) 0px; */
   display: flex;
   align-items: flex-start;
   justify-content: center;
   margin: auto;
   flex-direction: column;
-  gap: var(--xx-large-gap);
+  /* gap: var(--xx-large-gap); */
   max-width: 1200px;
   height: 100%;
 }
@@ -18,10 +18,10 @@
 }
 
 @media (max-width: 499px) {
-  .articleContainer {
+  /* .articleContainer {
     padding: 0px var(--padding-medium);
     gap: var(--medium-gap);
-  }
+  } */
 
   .articleTitle {
     font-size: var(--font-size-x-large);

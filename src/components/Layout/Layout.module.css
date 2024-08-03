@@ -8,7 +8,7 @@
   padding: var(--padding-large);
 }
 
-@media (max-width: 499px) {
+@media (max-width: 599px) {
   .pageContainer {
     margin-top: calc(40px + var(--padding-medium));
     padding: var(--padding-large) var(--padding-small);
