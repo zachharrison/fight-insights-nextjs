@@ -1,5 +1,6 @@
 import Link from 'next/link';
 import styles from './BlogPostPreview.module.css';
+import * as cheerio from 'cheerio';
 
 export type BlogPostPreviewProps = {
   fullWidth?: boolean;
@@ -10,10 +11,16 @@ export type BlogPostPreviewProps = {
   content?: any;
 };
 
+const stripHtml = (html: string) => {
+  const string = cheerio.load(html);
+  return string.text();
+};
+
 const truncate = (description: string) => {
-  return description.length > 80
-    ? description.substring(0, 80) + '...'
-    : description;
+  const strippedHTMLString = stripHtml(description);
+  return strippedHTMLString.length > 80
+    ? strippedHTMLString.substring(0, 80) + '...'
+    : strippedHTMLString;
 };
 
 const FullWidthView = (post: BlogPostPreviewProps) => {
@@ -28,7 +35,10 @@ const FullWidthView = (post: BlogPostPreviewProps) => {
           <h1 className='title-h1'>{post.title}</h1>
         </Link>
         {post.content && (
-          <p className={styles.descriptionP} style={{ maxWidth: '400px' }}>
+          <p
+            className={styles.descriptionP}
+            style={{ maxWidth: '400px', fontSize: 'var(--font-size-x-small)' }}
+          >
             {truncate(post.content)}
           </p>
         )}

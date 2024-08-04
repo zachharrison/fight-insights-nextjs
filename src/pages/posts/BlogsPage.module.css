@@ -32,8 +32,13 @@
     gap: 20px;
   }
 
+  .blogContainer {
+    flex-direction: column;
+  }
+
   .blogImg {
-    width: 200px;
+    width: 100%;
+    max-width: 100%;
   }
 
   .blogTitle {
