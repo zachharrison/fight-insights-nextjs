@@ -74,11 +74,10 @@ const StarSVG = ({
   color?: string;
 }) => (
   <svg
+    className={styles.starIcon}
     xmlns='http://www.w3.org/2000/svg'
     xmlnsXlink='http://www.w3.org/1999/xlink'
     version='1.1'
-    width='60'
-    height='60'
     viewBox='0 0 256 256'
     xmlSpace='preserve'
   >
@@ -117,17 +116,16 @@ export default function ReviewPage(review: Review) {
     'poor wrist support',
   ];
 
-  const escapedProsText = 'Pro&apos;s';
-  const escapedConsText = 'Con&apos;s';
+  const escapedProsText = `Pro's`;
+  const escapedConsText = `Con's`;
 
   return (
     <div className={styles.container}>
       <div className={styles.topCardContainer}>
-        <div
-          className='flex-column-container center'
-          style={{ gap: 'var(--x-large-gap)' }}
-        >
-          <h1 className='title-h1'>{review.title}</h1>
+        <div className={styles.topCardContentContainer}>
+          <h1 className='title-h1' style={{ textAlign: 'center' }}>
+            {review.title}
+          </h1>
           <img
             className={styles.reviewImg}
             src={review.imageUrl}

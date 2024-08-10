@@ -15,6 +15,15 @@
   margin: auto;
 }
 
+.topCardContentContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin: auto;
+  gap: var(--medium-gap);
+}
+
 .reviewImg {
   max-height: 300px;
 }
@@ -67,11 +76,8 @@
 }
 
 .starIcon {
-  height: 40px;
-}
-
-.starIcon .svg-path {
-  fill: red;
+  height: 60px;
+  width: 60px;
 }
 
 .proConText {
@@ -82,6 +88,18 @@
 }
 
 @media (max-width: 499px) {
+  .topCardContentContainer {
+    gap: var(--small-gap);
+  }
+
+  .starIcon {
+    height: 40px;
+    width: 40px;
+  }
+
+  .reviewImg {
+    max-height: 200px;
+  }
 }
 
 @media (max-width: 1000px) {

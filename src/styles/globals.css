@@ -147,20 +147,21 @@ html[data-theme='dark'] {
   color: var(--text-color);
   font-weight: bold;
   font-size: var(--font-size-x-large);
-  line-height: 25px;
+  line-height: normal;
 }
 
 .title-h3 {
   font-size: var(--font-size-large);
   font-weight: bold;
   color: var(--text-color);
-  line-height: 25px;
+  line-height: normal;
 }
 
 .text-p {
   color: var(--text-color);
   font-weight: normal;
   font-size: var(--font-size-small);
+  line-height: normal;
 }
 
 a:link,
