@@ -117,6 +117,9 @@ export default function ReviewPage(review: Review) {
     'poor wrist support',
   ];
 
+  const escapedProsText = 'Pro&apos;s';
+  const escapedConsText = 'Con&apos;s';
+
   return (
     <div className={styles.container}>
       <div className={styles.topCardContainer}>
@@ -141,7 +144,7 @@ export default function ReviewPage(review: Review) {
       </div>
       <div className={styles.gridContainer}>
         <div className={styles.proConCard}>
-          <h1>Pro's</h1>
+          <h1>{escapedProsText}</h1>
           {pros.map((pro, idx) => (
             <div key={pro + '_' + idx} className={styles.proConTextContainer}>
               <img
@@ -154,7 +157,7 @@ export default function ReviewPage(review: Review) {
           ))}
         </div>
         <div className={styles.proConCard}>
-          <h1>Con's</h1>
+          <h1>{escapedConsText}</h1>
           {cons.map((con, idx) => (
             <div key={con + '_' + idx} className={styles.proConTextContainer}>
               <img className={styles.proConIcon} src='/x.svg' alt='x-icon' />
