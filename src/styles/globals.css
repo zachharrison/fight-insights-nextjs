@@ -55,10 +55,12 @@ html[data-theme='dark'] {
   --font-size-x-large: 26px;
   --font-size-xx-large: 30px;
   --font-size-xxx-large: 36px;
+  --font-size-xxxx-large: 42px;
   --border-radius: 12px;
   --text-color: #24272b;
   --text-dark: #24272b;
   --page-gap: 30px;
+  --x-small-gap: 5px;
   --small-gap: 10px;
   --medium-gap: 20px;
   --large-gap: 30px;
@@ -233,7 +235,7 @@ a:hover {
   max-width: 700px;
   line-height: 30px;
   margin: auto;
-  padding-top: var(--large-gap);
+  /* padding-top: var(--large-gap); */
 }
 
 .article-text p {

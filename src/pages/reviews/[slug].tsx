@@ -123,20 +123,28 @@ export default function ReviewPage(review: Review) {
     <div className={styles.container}>
       <div className={styles.topCardContainer}>
         <div className={styles.topCardContentContainer}>
-          <h1 className='title-h1' style={{ textAlign: 'center' }}>
-            {review.title}
-          </h1>
-          <img
-            className={styles.reviewImg}
-            src={review.imageUrl}
-            alt={review.title}
-          />
-          <div className='flex-start-container center'>
-            <StarSVG color='var(--primary-color)' />
-            <StarSVG color='var(--primary-color)' />
-            <StarSVG color='var(--primary-color)' />
-            <StarSVG />
-            <StarSVG />
+          <div className='flex-center-container width-100'>
+            <div className='flex-column-container center'>
+              <h1 className={styles.reviewTitle}>{review.title}</h1>
+              <img
+                className={styles.reviewImg}
+                src={review.imageUrl}
+                alt={review.title}
+              />
+            </div>
+            <div className='flex-column-container center'>
+              <div className={styles.score}>
+                <h1>3</h1>
+                <span>Out of 5</span>
+              </div>
+              <div className={styles.starsContainer}>
+                <StarSVG color='var(--primary-color)' />
+                <StarSVG color='var(--primary-color)' />
+                <StarSVG color='var(--primary-color)' />
+                <StarSVG />
+                <StarSVG />
+              </div>
+            </div>
           </div>
         </div>
       </div>
