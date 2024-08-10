@@ -1,6 +1,6 @@
 export type Review = {
   id: string;
-  image: string;
+  imageUrl: string;
   title: string;
   slug: string;
   date?: string;
