@@ -148,7 +148,7 @@ export default function ReviewPage(review: Review) {
           </div>
         </div>
       </div>
-      <div className={styles.gridContainer}>
+      <div className={styles.proConCardContainer}>
         <div className={styles.proConCard}>
           <h1>{escapedProsText}</h1>
           {pros.map((pro, idx) => (

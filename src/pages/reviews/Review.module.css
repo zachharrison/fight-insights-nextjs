@@ -70,13 +70,15 @@
   max-height: 300px;
 }
 
-.gridContainer {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
+.proConCardContainer {
+  display: flex;
+  align-items: stretch;
+  justify-content: flex-start;
   margin: auto;
   width: 70%;
-  gap: var(--medium-gap);
+  gap: var(--large-gap);
   height: 100%;
+  height: fit-content;
 }
 
 .proConCard {
@@ -92,10 +94,8 @@
   align-items: center;
   justify-content: flex-start;
   gap: var(--padding-small);
-  min-width: 100%;
   min-height: 100%;
   width: 100%;
-  margin: auto;
 }
 
 .proConCard h1 {
@@ -131,11 +131,11 @@
 
 @media (max-width: 1100px) {
   .topCardContainer,
-  .gridContainer {
+  .proConCardContainer {
     width: 100%;
   }
-  .gridContainer {
-    grid-template-columns: 1fr;
+  .proConCardContainer {
+    flex-direction: column;
   }
   .score {
     height: 120px;
