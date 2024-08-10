@@ -74,12 +74,6 @@ html[data-theme='dark'] {
     rgba(17, 17, 20, 1) 68%,
     rgba(254, 190, 88, 1) 97%
   );
-  /* --gradient: linear-gradient(
-    17deg,
-    var(--secondary-color) 0%,
-    var(--primary-color) 35%,
-    var(--secondary-color) 100%
-  ); */
 }
 
 /******************************************
@@ -126,6 +120,13 @@ html[data-theme='dark'] {
 .height-100 {
   height: 100% !important;
   max-height: 100% !important;
+}
+
+.center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: auto;
 }
 
 .full-width-image {
@@ -230,6 +231,8 @@ a:hover {
   color: var(--text-color);
   max-width: 700px;
   line-height: 30px;
+  margin: auto;
+  padding-top: var(--large-gap);
 }
 
 .article-text p {

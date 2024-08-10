@@ -93,7 +93,6 @@ export default function BlogPage(blog: BlogPost) {
       <h1 className={styles.articleTitle}>{blog.title}</h1>
       <div
         className='article-text'
-        style={{ margin: 'auto' }}
         dangerouslySetInnerHTML={{ __html: blog.content }}
         key={blog.title + '_' + blog.id}
       />

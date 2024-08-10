@@ -1,0 +1,96 @@
+.container {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: var(--xx-large-gap);
+}
+
+.topCardContainer {
+  border-radius: var(--border-radius);
+  box-shadow: 1px 1px 7px 2px rgba(0, 0, 0, 0.2);
+  background: var(--gradient);
+  padding: var(--padding-large) var(--padding-medium);
+  gap: var(--large-gap);
+  width: 70%;
+  margin: auto;
+}
+
+.reviewImg {
+  max-height: 300px;
+}
+
+.gridContainer {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  margin: auto;
+  width: 70%;
+  gap: var(--medium-gap);
+  height: 100%;
+}
+
+.proConCard {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  border-radius: var(--border-radius);
+  box-shadow: var(--box-shadow);
+  background: var(--card-background-color);
+  color: var(--text-dark);
+  padding: var(--large-gap) var(--padding-medium);
+  text-align: center;
+  align-items: center;
+  justify-content: flex-start;
+  gap: var(--padding-small);
+  min-width: 100%;
+  min-height: 100%;
+  width: 100%;
+  margin: auto;
+}
+
+.proConCard h1 {
+  font-size: var(--font-size-large);
+  color: var(--text-color);
+  font-weight: bold;
+  text-align: center;
+}
+
+.proConTextContainer {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  width: 100%;
+  gap: var(--small-gap);
+}
+
+.proConIcon {
+  height: 20px;
+}
+
+.starIcon {
+  height: 40px;
+}
+
+.starIcon .svg-path {
+  fill: red;
+}
+
+.proConText {
+  color: var(--text-color);
+  font-weight: normal;
+  font-size: var(--font-size-large);
+  text-align: left;
+}
+
+@media (max-width: 499px) {
+}
+
+@media (max-width: 1000px) {
+  .topCardContainer,
+  .gridContainer {
+    width: 100%;
+  }
+
+  .gridContainer {
+    grid-template-columns: 1fr;
+  }
+}
