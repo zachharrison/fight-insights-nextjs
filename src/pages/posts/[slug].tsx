@@ -1,11 +1,11 @@
 import { BlogPost } from '@/types/Blog';
 import { gql } from '@apollo/client';
 import { GetStaticPaths, GetStaticProps } from 'next';
-import Image from 'next/image';
 import moment from 'moment';
 import client from '@/lib/apolloClient';
 import { useEffect } from 'react';
 import styles from './Blog.module.css';
+
 export const getStaticPaths: GetStaticPaths = async () => {
   const { data } = await client.query({
     query: gql`
@@ -70,7 +70,7 @@ export const getStaticProps: GetStaticProps = async (context) => {
   };
 };
 
-export default function BlogsPage(blog: BlogPost) {
+export default function BlogPage(blog: BlogPost) {
   useEffect(() => {
     // Re-run any scripts within the content (e.g., Twitter embeds)
     const scripts = document.querySelectorAll('.article-text script');
