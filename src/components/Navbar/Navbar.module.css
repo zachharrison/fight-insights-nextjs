@@ -30,16 +30,6 @@
   color: var(--white-color);
 }
 
-@media (max-width: 499px) {
-  .containerDiv {
-    padding: var(--padding-large) var(--padding-small);
-    gap: 10px;
-  }
-  .navLink p {
-    font-size: var(--font-size-medium);
-  }
-}
-
 .iconContainerDiv {
   display: flex;
   align-items: center;
@@ -49,5 +39,15 @@
 
 .logo {
   border-radius: 12px;
-  width: 60px;
+  width: 100px;
+}
+
+@media (max-width: 499px) {
+  .containerDiv {
+    padding: var(--padding-large) var(--padding-small);
+    gap: 10px;
+  }
+  .navLink p {
+    font-size: var(--font-size-medium);
+  }
 }

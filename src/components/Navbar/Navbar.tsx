@@ -5,11 +5,6 @@ export const Navbar = () => {
   return (
     <div className={styles.containerDiv}>
       <div className='flex-start-container'>
-        <Link href='/' passHref>
-          <p style={{ cursor: 'pointer' }}>
-            <img src='/logo.png' alt='Logo' className={styles.logo} />
-          </p>
-        </Link>
         <Link href='/reviews' className={styles.navLink} passHref>
           <p className='text-p'>Reviews</p>
         </Link>
@@ -17,6 +12,11 @@ export const Navbar = () => {
           <p className='text-p'>Blog</p>
         </Link>
       </div>
+      <Link href='/' passHref>
+        <p style={{ cursor: 'pointer' }}>
+          <img src='/logo.png' alt='Logo' className={styles.logo} />
+        </p>
+      </Link>
       <div className={styles.iconContainerDiv}>
         {/* <ThemeToggle /> */}
 

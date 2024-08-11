@@ -123,9 +123,9 @@ export default function ReviewPage(review: Review) {
     <div className={styles.container}>
       <div className={styles.topCardContainer}>
         <div className={styles.topCardContentContainer}>
+          <h1 className={styles.reviewTitle}>{review.title}</h1>
           <div className='flex-center-container width-100'>
             <div className='flex-column-container center'>
-              <h1 className={styles.reviewTitle}>{review.title}</h1>
               <img
                 className={styles.reviewImg}
                 src={review.imageUrl}

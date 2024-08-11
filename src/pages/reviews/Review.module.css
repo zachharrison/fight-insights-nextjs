@@ -21,7 +21,7 @@
   align-items: center;
   justify-content: center;
   margin: auto;
-  gap: var(--medium-gap);
+  gap: var(--x-large-gap);
 }
 
 .reviewTitle {
@@ -165,7 +165,7 @@
 
 @media (max-width: 525px) {
   .topCardContentContainer {
-    gap: var(--small-gap);
+    gap: var(--large-gap);
   }
 
   .reviewTitle {
@@ -192,6 +192,6 @@
   }
 
   .reviewImg {
-    max-height: 100px;
+    max-height: 125px;
   }
 }
