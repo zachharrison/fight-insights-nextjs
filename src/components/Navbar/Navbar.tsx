@@ -1,3 +1,4 @@
+import { ThemeSwitch } from '../ThemeSwitch/ThemeSwitch';
 import styles from './Navbar.module.css';
 import Link from 'next/link';
 
@@ -18,11 +19,7 @@ export const Navbar = () => {
         </p>
       </Link>
       <div className={styles.iconContainerDiv}>
-        {/* <ThemeToggle /> */}
-
-        <div style={{ fontSize: 'var(--font-size-x-small)' }}>
-          THEME SWITCHER{' '}
-        </div>
+        <ThemeSwitch />
       </div>
     </div>
   );

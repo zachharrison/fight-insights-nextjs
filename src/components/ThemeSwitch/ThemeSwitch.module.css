@@ -1,0 +1,44 @@
+.toggleContainer {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 5.8rem;
+  height: 3rem;
+  margin: 0 auto;
+  border-radius: 30px;
+  border: 2px solid var(--white-color);
+  font-size: 0.5rem;
+  padding: 0.5rem;
+  overflow: hidden;
+  cursor: pointer;
+  outline: none;
+  background: none;
+}
+
+.switch {
+  position: absolute;
+  height: 2rem;
+  width: 2rem;
+  border-radius: 50%;
+  transition: transform 0.3s, background-color 0.3s ease;
+}
+
+.sun,
+.moon {
+  position: relative;
+  border-radius: 50%;
+  height: 2rem;
+  width: 2rem;
+  padding: 7px;
+  z-index: 9;
+}
+
+.footer {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  font-family: Termina, sans-serif;
+  font-weight: 600;
+  font-size: 0.6rem;
+}
