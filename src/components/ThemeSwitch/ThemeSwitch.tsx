@@ -1,8 +1,9 @@
 import React, { useState } from 'react';
 import styles from './ThemeSwitch.module.css';
+import { useTheme } from '../../context/themeContext';
 
 export const ThemeSwitch = () => {
-  const [isLight, setIsLight] = useState(false);
+  const { theme, toggleTheme } = useTheme();
 
   const lightTheme = {
     backgroundColor: '#FCF2EB',
@@ -16,17 +17,13 @@ export const ThemeSwitch = () => {
     moon: '#fff',
   };
 
-  const currentTheme = isLight ? lightTheme : darkTheme;
-
+  const currentTheme = theme === 'light' ? lightTheme : darkTheme;
   return (
-    <button
-      className={styles.toggleContainer}
-      onClick={() => setIsLight(!isLight)}
-    >
+    <button className={styles.toggleContainer} onClick={toggleTheme}>
       <div
         className={styles.switch}
         style={{
-          transform: isLight ? 'translateX(0)' : 'translateX(2.5rem)',
+          transform: theme === 'light' ? 'translateX(0)' : 'translateX(2.5rem)',
           backgroundColor: currentTheme.backgroundColor,
         }}
       />
