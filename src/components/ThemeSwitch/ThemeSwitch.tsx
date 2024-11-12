@@ -1,6 +1,6 @@
-import React, { useState } from 'react';
+import React from 'react';
 import styles from './ThemeSwitch.module.css';
-import { useTheme } from '../../context/themeContext';
+import { useTheme } from '@/context/themeContext';
 
 export const ThemeSwitch = () => {
   const { theme, toggleTheme } = useTheme();
