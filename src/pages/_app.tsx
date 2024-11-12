@@ -2,7 +2,7 @@ import { Layout } from '@/components/Layout/Layout';
 import '@/styles/globals.css';
 import type { AppProps } from 'next/app';
 import Head from 'next/head';
-
+import { ThemeProvider } from '../context/themeContext';
 export default function App({ Component, pageProps }: AppProps) {
   return (
     <>
@@ -16,9 +16,11 @@ export default function App({ Component, pageProps }: AppProps) {
         />
         <meta name='description' content='The home of all things fighting' />
       </Head>
-      <Layout>
-        <Component {...pageProps} />
-      </Layout>
+      <ThemeProvider>
+        <Layout>
+          <Component {...pageProps} />
+        </Layout>
+      </ThemeProvider>
     </>
   );
 }
