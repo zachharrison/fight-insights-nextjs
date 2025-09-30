@@ -55,7 +55,7 @@ export default function Post(post: BlogPostPreviewProps) {
     <div className={styles.cardContainerDiv}>
       <img src={post.imageUrl} className={styles.image} />
       <Link href={`/posts/${post.slug}`}>
-        <h3 className='title-h3'> {post.title}</h3>
+        <h3 className='title-h3'>{post.title}</h3>
       </Link>
     </div>
   );
