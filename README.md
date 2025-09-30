@@ -1,40 +1,43 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Fight Insights
 
-## Getting Started
+A **Next.js web application** powered by a **headless WordPress CMS**, designed to deliver MMA fight news, blogs, and gear reviews with modern frontend performance and SEO optimizations.
 
-First, run the development server:
+🔗 **Live Site:** [fightinsights.ca](https://www.fightinsights.ca)
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+---
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## 📸 Preview
 
-You can start editing the page by modifying `pages/index.tsx`. The page auto-updates as you edit the file.
+Here are some screenshots of the project in action:
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.ts`.
+![Homepage Screenshot](./public/home_screenshot.png)
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
+![Review Screenshot](./public/review_screenshot.png)
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+![Blog Screenshot](./public/blog_screenshot.png)
 
-## Learn More
+---
 
-To learn more about Next.js, take a look at the following resources:
+## 🚀 Features
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+- **Next.js (Pages Router)** for server-side rendering (SSR), static site generation (SSG), and optimized routing
+- **GraphQL (Apollo Client)** integration with WordPress for fetching posts, reviews, and categories
+- **Headless CMS with WordPress** to manage blog content, media, and structured review data
+- **CSS Modules** for component-scoped styles without global conflicts
+- **Theme Switcher** with CSS variables for light/dark mode
+- **Responsive Design** optimized for desktop and mobile
+- **Dynamic Routing** for posts and reviews (`/posts/[slug]`, `/reviews/[slug]`)
+- **SEO-Friendly Metadata** with `next/head` and Open Graph tags
+- **Deployment on Vercel** for fast, production-ready hosting
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+---
 
-## Deploy on Vercel
+## 🛠️ Tech Stack
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+- [Next.js](https://nextjs.org/)
+- [React](https://reactjs.org/)
+- [Apollo Client](https://www.apollographql.com/docs/react/)
+- [WordPress CMS (Headless)](https://wordpress.org/)
+- [GraphQL](https://graphql.org/)
+- [CSS Modules](https://nextjs.org/docs/basic-features/built-in-css-support#adding-component-level-css)
+- [Vercel](https://vercel.com/)
