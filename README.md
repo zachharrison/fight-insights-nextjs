@@ -6,9 +6,7 @@ A **Next.js web application** powered by a **headless WordPress CMS**, designed 
 
 ---
 
-## 📸 Preview
-
-Here are some screenshots of the project in action:
+## 📸 Screenshots
 
 ![Homepage Screenshot](./public/home_screenshot.png)
 
